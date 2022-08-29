@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog`,
+    title: `Mario's Gatsby Blog`,
     description: `ITDEV-164 Gatsby Blog`,
     author: `Mario Moreno`,
     contact: {
       name: `Mario Moreno`,
       company: `MMCreative`,
-      address: `My House`,
+      address: `5555 My House`,
     },
   },
   plugins: [
