@@ -14,7 +14,6 @@ function About({ data }) {
       <p>{`${company} was started by ${name} in 2022.`}</p>
       <p>{`At ${company} we just create creative stuff`}</p>
       <Image />
-
       <Link to="/">Home</Link>
     </Layout>
   )
