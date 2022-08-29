@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import Image from "../components/Image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-function about({ data }) {
+function About({ data }) {
   const { name, company } = data.site.siteMetadata.contact
 
   return (
@@ -13,22 +13,14 @@ function about({ data }) {
       <h1>About Us</h1>
       <p>{`${company} was started by ${name} in 2022.`}</p>
       <p>{`At ${company} we just create creative stuff`}</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <StaticImage
-          src="../images/gatsby-icon.png"
-          width={300}
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          alt="Gatsby logo"
-          style={{ marginBottom: `1.45rem` }}
-        />
-      </div>
+      <Image />
+
       <Link to="/">Home</Link>
     </Layout>
   )
 }
 
-export default about
+export default About
 
 export const query = graphql`
   query {
