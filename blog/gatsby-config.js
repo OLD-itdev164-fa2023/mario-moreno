@@ -1,3 +1,4 @@
+require("dotenv").config({ path: "../.env" })
 module.exports = {
   siteMetadata: {
     title: `Mario's Gatsby Blog`,
@@ -10,6 +11,13 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

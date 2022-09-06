@@ -43,6 +43,9 @@ body {
   margin: 0;
   word-wrap: break-word;
 }
+header {
+  background-color: #e8d1f5;
+}
 a {
   background-color: transparent;
   color: var(--color-primary);
