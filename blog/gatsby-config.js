@@ -7,7 +7,7 @@ module.exports = {
     contact: {
       name: `Mario Moreno`,
       company: `MMCreative`,
-      address: `5555 My House`,
+      address: `5555 Milwaukee, WI, 53215`,
     },
   },
   plugins: [
@@ -26,6 +26,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
