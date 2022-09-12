@@ -7,7 +7,7 @@ module.exports = {
     contact: {
       name: `Mario Moreno`,
       company: `MMCreative`,
-      address: `5555 My House`,
+      address: `5555 Milwaukee, WI, 53215`,
     },
   },
   plugins: [
