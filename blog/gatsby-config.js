@@ -1,7 +1,7 @@
 require("dotenv").config({ path: "../.env" })
 module.exports = {
   siteMetadata: {
-    title: `Mario's Gatsby Blog`,
+    title: `Mario Moreno Gatsby Site`,
     description: `ITDEV-164 Gatsby Blog`,
     author: `Mario Moreno`,
     contact: {
