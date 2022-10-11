@@ -26,7 +26,6 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             slug: edge.node.slug,
           },
-          defer: true,
         })
       })
       resolve()
