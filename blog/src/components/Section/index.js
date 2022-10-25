@@ -1,1 +1,1 @@
-export { Sections } from "./Section"
+export { Section } from "./Section"
