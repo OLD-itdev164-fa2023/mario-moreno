@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Button } from "rebass"
 import styled from "styled-components"
-import { Restart } from "styled-icons/remix-fill"
 
 const Reset = styled(Button)`
   background: none;
@@ -13,7 +12,7 @@ const Reset = styled(Button)`
 `
 
 export const BaseButton = ({ children, ...rest }) => {
-  return <Reset {...Restart}>{children}</Reset>
+  return <Reset {...rest}>{children}</Reset>
 }
 
 BaseButton.propTypes = {
