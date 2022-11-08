@@ -3,15 +3,37 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { List, ListItem } from "../components/List"
+import styled from "styled-components"
+import { Box, Card } from "rebass"
+
+const Grid = styled(Box)`
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0px;
+  display: grid;
+  row-gap: 30px;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+`
 
 const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Home" />
 
-    <List width={[1, 2 / 3, 7 / 8]} p={2}>
+    <Grid>
       {data.allContentfulBlogPost.edges.map(edge => (
-        <ListItem key={edge.node.id} p={3}>
+        <Card
+          key={edge.node.id}
+          width={256}
+          p={3}
+          sx={{
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderColor: "grey",
+            justifySelf: "center",
+          }}
+        >
           <Link to={edge.node.slug}>{edge.node.title}</Link>
           <div>
             <GatsbyImage
@@ -20,9 +42,9 @@ const IndexPage = ({ data }) => (
             />
           </div>
           <div>{edge.node.body.childMarkdownRemark.excerpt}</div>
-        </ListItem>
+        </Card>
       ))}
-    </List>
+    </Grid>
   </Layout>
 )
 
