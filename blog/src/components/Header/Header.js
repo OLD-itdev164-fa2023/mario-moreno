@@ -11,10 +11,14 @@ const Outer = styled.header`
   background: ${({ theme }) => theme.variants.header.primary.backgroundColor};
   margin-bottom: 1.45rem;
   margin: 0 auto;
-  padding: var(--space-4) var(--size-gutter);
+  padding: var(--space-2) var(--size-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
+`
+const Inner = styled.div`
+  margin: 0 auto;
+  max-width: var(--size-content);
 `
 
 const StyledLink = styled(Link)`
@@ -38,42 +42,44 @@ const Title = styled(H1)`
   padding-top: 15px;
 `
 const MediaQuery = styled.div`
-  @media (max-width: 450px) {
+  @media (max-width: 510px) {
     display: none;
   }
 `
 const Header = ({ siteTitle }) => (
   <Outer>
-    <Section flex>
-      <Section
-        width={1 / 12}
-        flex
-        flexDirection="column"
-        justifyContent="center"
-      >
-        <ThemeConsumer>
-          {theme => <Image src={theme.images.mainHeaderImage} />}
-        </ThemeConsumer>
+    <Inner>
+      <Section flex>
+        <Section
+          width={1 / 12}
+          flex
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <ThemeConsumer>
+            {theme => <Image src={theme.images.mainHeaderImage} />}
+          </ThemeConsumer>
+        </Section>
+        <Section
+          width={11 / 12}
+          flex
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <Nav>
+            <Title>
+              <StyledLink to="/">{siteTitle}</StyledLink>
+            </Title>
+            <MediaQuery>
+              <StyledLink to="/">Home</StyledLink>
+              <StyledLink to="/about">About</StyledLink>
+              <StyledLink to="/contact">Contact</StyledLink>
+            </MediaQuery>
+            <SearchButton variant="contrast" />
+          </Nav>
+        </Section>
       </Section>
-      <Section
-        width={11 / 12}
-        flex
-        flexDirection="column"
-        justifyContent="center"
-      >
-        <Nav>
-          <Title>
-            <StyledLink to="/">{siteTitle}</StyledLink>
-          </Title>
-          <MediaQuery>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/contact">Contact</StyledLink>
-          </MediaQuery>
-          <SearchButton variant="contrast" />
-        </Nav>
-      </Section>
-    </Section>
+    </Inner>
   </Outer>
 )
 

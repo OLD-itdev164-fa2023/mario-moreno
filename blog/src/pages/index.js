@@ -3,17 +3,18 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { List, ListItem } from "../components/List"
 import styled from "styled-components"
-import { Box, Card, Image, Heading } from "rebass"
+import { Box, Card } from "rebass"
 
 const Grid = styled(Box)`
   box-sizing: border-box;
   margin: 0;
   min-width: 0px;
   display: grid;
-  gap: 100px;
-  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  row-gap: 30px;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
 `
 
 const IndexPage = ({ data }) => (
@@ -22,7 +23,17 @@ const IndexPage = ({ data }) => (
 
     <Grid>
       {data.allContentfulBlogPost.edges.map(edge => (
-        <Card key={edge.node.id} width={256} p={3}>
+        <Card
+          key={edge.node.id}
+          width={256}
+          p={3}
+          sx={{
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderColor: "grey",
+            justifySelf: "center",
+          }}
+        >
           <Link to={edge.node.slug}>{edge.node.title}</Link>
           <div>
             <GatsbyImage

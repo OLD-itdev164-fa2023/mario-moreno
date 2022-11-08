@@ -18,7 +18,6 @@ import { Footer } from "../components/Footer"
 const Content = styled.div`
   margin: 0 auto;
   max-width: var(--size-content);
-  padding: var(--size-gutter);
 `
 
 const Layout = ({ children }) => {
