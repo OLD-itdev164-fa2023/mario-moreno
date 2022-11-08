@@ -18,9 +18,9 @@ const theme = {
 }
 
 const variants = {
-  buttons: {
+  iconButton: {
     primary: {
-      color: theme.colors.grays[8],
+      color: theme.colors.grays[7],
     },
     contrast: {
       color: theme.colors.grays[0],
