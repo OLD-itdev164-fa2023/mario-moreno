@@ -1,9 +1,9 @@
 import React from "react"
-import mainHeadingImage from "./images/react.png"
+import mainHeaderImage from "./images/react.png"
 import { Search } from "styled-icons/feather"
 
 const images = {
-  mainHeadingImage,
+  mainHeaderImage,
 }
 const icons = {
   Search: <Search />,
